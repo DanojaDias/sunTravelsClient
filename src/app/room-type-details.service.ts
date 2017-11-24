@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Hotel } from './hotel';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import {RoomTypeDetails} from './room-type-details';
 
 @Injectable()
-export class HotelService {
+export class RoomTypeDetailsService {
 
-  private hotelsUrl = 'http://localhost:8090/hotel/';
+  private roomTypeDetailsUrl = 'http://localhost:8090/room-type-details/';
 
   constructor(private http: HttpClient) { }
 
 
-  getHotels(): Observable<Hotel[]> {
-    return this.http.get<Hotel[]>(this.hotelsUrl);
+  getRoomTypeDetails(): Observable<RoomTypeDetails[]> {
+    return this.http.get<RoomTypeDetails[]>(this.roomTypeDetailsUrl);
   }
 
   // private handleError<T> (operation = 'operation', result?: T) {

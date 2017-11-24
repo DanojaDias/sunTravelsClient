@@ -3,12 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
-import { HotelsComponent } from './hotels/hotels.component';
-import { HotelService } from './hotel.service';
 import { HttpClientModule   } from '@angular/common/http';
-import { ContractComponent } from './contract/contract.component';
-import {ContractService} from './contract.service';
-
+import { RoomTypeDetailsComponent } from './room-type-details/room-type-details.component';
+import { RoomTypeDetailsService } from './room-type-details.service';
 @NgModule({
   imports: [
     HttpClientModule,
@@ -17,10 +14,9 @@ import {ContractService} from './contract.service';
 
   declarations: [
     AppComponent,
-    HotelsComponent,
-    ContractComponent,
+    RoomTypeDetailsComponent,
   ],
-  providers: [ HotelService, ContractService ],
+  providers: [ RoomTypeDetailsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
