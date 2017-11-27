@@ -6,7 +6,7 @@ import {RoomType} from './room-type';
 export class RoomTypeDetails {
   contract: Contract;
   roomType: RoomType;
-  maxAdults: string;
+  maxAdults: number;
   rate: Hotel;
   numberOfTotallRooms: number;
   numberOfFreeRooms: number;

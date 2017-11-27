@@ -1,11 +1,19 @@
 <h2>Contracts</h2>
 <div class="roomTypeDetails">
-  <li *ngFor="let roomTypeDetail of roomTypeDetails">
-    <span class="badge">{{roomTypeDetail.rate}}</span>
-  </li>
+
+  <table>
+    <th>Hotel Name</th>
+    <tr *ngFor="let roomTypeDetail of roomTypeDetails">
+      <td>{{ roomTypeDetail.rate }}</td>
+      <td>{{ roomTypeDetail.numberOfFreeRooms }}</td>
+    </tr>
+  </table>
 
 </div>
 
 
-
-
+<!--<div class="roomTypeDetails">-->
+  <!--<li *ngFor="">-->
+    <!--<span class="badge">{{roomTypeDetail.rate}}</span>-->
+  <!--</li>-->
+<!--</div>-->

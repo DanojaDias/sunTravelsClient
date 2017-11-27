@@ -8,13 +8,14 @@ import {RoomTypeDetails} from './room-type-details';
 @Injectable()
 export class RoomTypeDetailsService {
 
-  private roomTypeDetailsUrl = 'http://localhost:8090/room-type-details/';
+  private getRoomTypeDetailsUrl = 'http://localhost:8090/room-type-details/';
+  private postRoomTypeDetailUrl = 'http://localhost:8090/room-type-details/';
 
   constructor(private http: HttpClient) { }
 
 
   getRoomTypeDetails(): Observable<RoomTypeDetails[]> {
-    return this.http.get<RoomTypeDetails[]>(this.roomTypeDetailsUrl);
+    return this.http.get<RoomTypeDetails[]>(this.getRoomTypeDetailsUrl);
   }
 
   // private handleError<T> (operation = 'operation', result?: T) {
