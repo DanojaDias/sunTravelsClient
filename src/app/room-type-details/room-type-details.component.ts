@@ -7,7 +7,9 @@ import { RoomTypeDetailsService } from '../room-type-details.service';
   templateUrl: './room-type-details.component.html',
   styleUrls: ['./room-type-details.component.css']
 })
+
 export class RoomTypeDetailsComponent implements OnInit {
+  displayedColumns = ['position', 'name'];
   roomTypeDetails: RoomTypeDetails[];
 
   constructor(private roomTypeDetailsService: RoomTypeDetailsService) { }

@@ -1,8 +1,8 @@
 <h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let roomTypeDetail of roomTypeDetails" class="col-1-4">
+<div >
+  <a *ngFor="let roomTypeDetail of roomTypeDetails" >
     <div class="module roomTypeDetail">
-      <h4>{{roomTypeDetail.rate}}</h4>
+      <h4>{{roomTypeDetail.rate}}</h4><h4>{{roomTypeDetail.numberOfFreeRooms}}</h4>
     </div>
   </a>
 </div>

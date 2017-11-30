@@ -1,0 +1,43 @@
+<div class="row">
+  <form #hotelForm="ngForm" class="col s12" >
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="hotel_name" type="text" class="validate" [(ngModel)]="hotel.hotelName" name="hotel_name">
+        <label for="hotel_name">Hotel Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="hotel_city" type="text" class="validate" [(ngModel)]="hotel.hotelCity" name="hotel_city">
+        <label for="hotel_city">Hotel City</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="hotel_tp" type="tel" class="validate" [(ngModel)]="hotel.hotelTp" name="hotel_tp" >
+        <label for="hotel_tp">Hotel TP</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="hotel_State" type="text" class="validate" [(ngModel)]="hotel.hotelState" name="hotel_State">
+        <label for="hotel_State">Hotel State</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="hotel_Zip" type="text" class="validate" [(ngModel)]="hotel.hotelZip" name="hotel_Zip">
+        <label for="hotel_Zip">Hotel Zip</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="hotel_Street" type="text" class="validate"  [(ngModel)]="hotel.hotelStreet" name="hotel_Street">
+        <label for="hotel_Street">Hotel Street</label>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn" (click)="addHotels(); hotelForm.reset()">Add Hotel</a>
+  </form>
+
+</div>
+

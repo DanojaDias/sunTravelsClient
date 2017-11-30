@@ -1,0 +1,24 @@
+<div><h2>Hotels</h2></div>
+<div>
+  <a  routerLink="/add-hotel">
+    <div class="module contact">Add New Hotel</div>
+  </a>
+</div>
+<div >
+
+  <table class="striped">
+    <tr>
+      <th>Hotel Id</th>
+      <th>Hotel Name</th>
+      <th>Hotel City</th>
+      <th>Hotel Tp</th>
+    </tr>
+    <tr *ngFor="let element of hotel">
+      <td>{{ element.hotelId}}</td>
+      <td>{{ element.hotelName }}</td>
+      <td>{{ element.hotelCity }}</td>
+      <td>{{ element.hotelTp}}</td>
+    </tr>
+  </table>
+</div>
+

@@ -1,0 +1,31 @@
+<div><h2>Contracts</h2></div>
+<div>
+  <a  routerLink="/add-contract">
+    <div class="module contact">Add New Contact</div>
+  </a>
+</div>
+<div >
+
+  <table class="striped">
+    <tr>
+      <th>Contract Id</th>
+      <th>Hotel Name</th>
+      <th>Hotel Id</th>
+      <th>Valid From</th>
+      <th>Valid To</th>
+    </tr>
+    <tr *ngFor="let element of contract">
+      <td>{{ element.contractId}}</td>
+      <td>{{ element.hotel.hotelName }}</td>
+      <td>{{ element.hotel.hotelId }}</td>
+      <td>{{ element.validFrom }}</td>
+      <td>{{ element.validTo }}</td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+
+
