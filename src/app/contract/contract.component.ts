@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Contract} from '../contract';
-import { ContractService } from '../contract.service';
+import { MainService } from '../main.service';
 @Component({
   selector: 'app-contract',
   templateUrl: './contract.component.html',
@@ -10,15 +10,14 @@ export class ContractComponent implements OnInit {
 
   contract: Contract[];
 
-  constructor(private contractService: ContractService) { }
+  constructor(private mainService: MainService) { }
 
   ngOnInit() {
     this.getContracts();
   }
 
   getContracts(): void {
-    this.contractService.getContracts()
+    this.mainService.getContracts()
       .subscribe(contract => {this.contract = contract; });
   }
-
 }

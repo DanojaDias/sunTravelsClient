@@ -1,19 +1,40 @@
-<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
-  <li>
-    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-</ul>
+<div class="row">
+  <form #hotelForm="ngForm" class="col s12" >
+    <div class="row" >
+      <div class="input-field col s4">
+        <a class='dropdown-button btn' data-activates='dropdown1'  data-hover=true data-beloworigin="true"><span id="hotel_name_dropdown">Select Hotel!</span></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="contract_valid_to">Valid From</label>
+        <div class="input-field">
+          <input id="contract_valid_from" type="date" class="datepicker validate" [(ngModel)]="contract.validFrom" name = "valid_from">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="contract_valid_to">Valid To</label>
+        <div class="input-field">
+          <input id="contract_valid_to" type="date" class="datepicker validate" [(ngModel)]="contract.validTo" name = "valid_to">
+        </div>
 
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="markup" type="text" class="validate" [(ngModel)]="contract.markup" name="markup">
+        <label for="markup">Mark Up</label>
+      </div>
+    </div>
 
-<button ion-button (click)="addContracts()">save</button>
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <li *ngFor="let element of hotel" (click)= "dropDownSelect(element);"><a>{{element.hotelName}}</a></li>
+    </ul>
 
+    <a class="waves-effect waves-light btn" (click)= "addContracts(contract); hotelForm.reset()">Add Contract</a>
+  </form>
+</div>
 

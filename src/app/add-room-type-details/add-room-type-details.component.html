@@ -1,0 +1,47 @@
+<div class="row">
+  <form #hotelForm="ngForm" class="col s12" >
+    <div class="row" >
+      <div class="input-field col s4">
+        <a class='dropdown-button btn' data-activates='dropdown1'  data-hover=true data-beloworigin="true"><span id="contract_dropdown">Select Contract!</span></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="room_type_name" type="text" class="validate" [(ngModel)]="roomType.roomTypeName" name="room_type_name">
+        <label for="room_type_name">Room Type Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="room_type-desc" type="text" class="validate" [(ngModel)]="roomType.roomTypeDesc" name="room_type-desc">
+        <label for="room_type-desc">Room Type Description</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="max_adults" type="text" class="validate" [(ngModel)]="roomTypeDetails.maxAdults" name="max_adults" >
+        <label for="max_adults">Max Adults</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="price" type="text" class="validate" [(ngModel)]="roomTypeDetails.rate" name="price">
+        <label for="price">Price</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="rooms" type="text" class="validate" [(ngModel)]="roomTypeDetails.numberOfTotallRooms" name="rooms">
+        <label for="rooms">Number of Rooms</label>
+      </div>
+    </div>
+
+
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <li *ngFor="let element of contracts" (click)= "dropDownSelect(element);"><a>{{element.contractId + " " + element.hotel.hotelName}}</a></li>
+    </ul>
+
+    <a class="waves-effect waves-light btn" (click)="addRoomType(); addRoomTypeDetails(); hotelForm.reset()">Add Room Type Details</a>
+  </form>
+</div>

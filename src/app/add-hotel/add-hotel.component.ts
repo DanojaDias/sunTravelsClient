@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Hotel} from '../hotel';
-import {HotelService} from '../hotel.service';
+import {MainService} from '../main.service';
 import { NgModel } from '@angular/forms';
 
 @Component({
@@ -10,16 +10,17 @@ import { NgModel } from '@angular/forms';
 })
 export class AddHotelComponent implements OnInit {
 
-  constructor(private hotelService: HotelService) { }
+  constructor(private mainService: MainService) { }
 
-  @Input() hotel: Hotel;
+  hotel: Hotel;
 
-  ngOnInit() {
 
+
+   ngOnInit() {
+    this.hotel = new Hotel();
   }
 
   addHotels(hotel: Hotel): void {
-    console.log(hotel.hotelCity);
-    this.hotelService.addHotel(hotel);
+    this.mainService.addHotel(hotel);
   }
 }

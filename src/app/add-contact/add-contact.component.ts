@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ContractService} from '../contract.service';
+import {MainService} from '../main.service';
 import {Contract} from '../contract';
+import {Hotel} from '../hotel';
 
 @Component({
   selector: 'app-add-contact',
@@ -8,15 +9,24 @@ import {Contract} from '../contract';
   styleUrls: ['./add-contact.component.css']
 })
 export class AddContactComponent implements OnInit {
-  constructor(private contractService: ContractService) { }
+  constructor(private mainService: MainService) { }
+  hotel: Hotel[];
+  contract: Contract;
 
   ngOnInit() {
+    this.contract = new Contract();
+    this.mainService.getHotels().subscribe(hotel => {this.hotel = hotel; });
 
   }
 
   addContracts(contract: Contract): void {
-    this.contractService.addContract(contract);
+    this.mainService.addContract(contract);
   }
 
+  dropDownSelect(element: Hotel): void {
+    document.getElementById('hotel_name_dropdown').innerHTML = element.hotelName;
+    this.contract.hotel = element;
+    console.log(element);
+  }
 
 }

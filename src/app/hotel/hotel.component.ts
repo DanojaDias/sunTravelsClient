@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Hotel} from '../hotel';
-import {HotelService} from '../hotel.service';
+import {MainService} from '../main.service';
 
 @Component({
   selector: 'app-hotel',
@@ -9,14 +9,18 @@ import {HotelService} from '../hotel.service';
 })
 export class HotelComponent implements OnInit {
   hotel: Hotel[];
-  constructor(private hotelService: HotelService) { }
+
+
+  constructor(private mainService: MainService) { }
 
   ngOnInit() {
     this.getHotels();
   }
 
   getHotels(): void {
-    this.hotelService.getHotels()
+    this.mainService.getHotels()
       .subscribe(hotel => {this.hotel = hotel; });
   }
+
+
 }

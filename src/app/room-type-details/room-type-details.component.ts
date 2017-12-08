@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RoomTypeDetails } from '../room-type-details';
-import { RoomTypeDetailsService } from '../room-type-details.service';
+import { MainService } from '../main.service';
 
 @Component({
   selector: 'app-room-type-details',
@@ -9,17 +9,16 @@ import { RoomTypeDetailsService } from '../room-type-details.service';
 })
 
 export class RoomTypeDetailsComponent implements OnInit {
-  displayedColumns = ['position', 'name'];
   roomTypeDetails: RoomTypeDetails[];
 
-  constructor(private roomTypeDetailsService: RoomTypeDetailsService) { }
+  constructor(private mainService: MainService) { }
 
   ngOnInit() {
     this.getRoomTypeDetails();
   }
 
   getRoomTypeDetails(): void {
-    this.roomTypeDetailsService.getRoomTypeDetails()
+    this.mainService.getRoomTypeDetails()
       .subscribe(roomTypeDetails => {this.roomTypeDetails = roomTypeDetails; });
   }
 }
